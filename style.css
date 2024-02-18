@@ -1,0 +1,24 @@
+/*
+    Author: Michael Harhay
+
+    Date created: 17/02/2024
+    Date modified: 17/02/2024
+
+    Functionality: Style of website
+*/
+
+body {
+    background-color: black;
+}
+
+h1 {
+    color: white;
+}
+
+a {
+    color: white;
+}
+
+p {
+    color: white;
+}
