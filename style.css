@@ -87,7 +87,7 @@ p {
 }
 
 /* Input forms */
-form {
+.contactpage {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -139,7 +139,6 @@ button {
     font-size: 18px;
     color: white;
     padding: 12px 20px;
-    margin-top: 10px;
     transition-duration: 0.3s;
 }
 
@@ -147,4 +146,15 @@ button:hover {
     cursor: pointer;
     color: black;
     background-color: white;
+}
+
+/* Socials */
+.socials {
+    color: white;
+    margin-top: 35px;
+    text-decoration: none;
+}
+
+.socials i {
+    padding: 0px 8px;
 }
