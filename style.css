@@ -2,15 +2,57 @@
     Author: Michael Harhay
 
     Date created: 17/02/2024
-    Date modified: 18/02/2024
+    Date modified: 16/07/2024
 
     Functionality: Style of website
 */
 
+/* Global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;  
+    padding: 8px; 
+    padding-left: 10%;
+    padding-right: 10%;
+    background-color: rgb(58, 58, 58);
+}
+
+/* Navbar */
+nav {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    width: 100%;
+}
+
+nav a {
+    text-align: center;
+    cursor: pointer;
+
+    color: white;
+    font-family: 'Fira Code', Courier, monospace;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-color: rgb(35, 35, 35);
+}
+
+/* General body text */
 body {
     background-color: black;
 }
 
+/* Heading 1 */
 h1 {
     color: white;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -18,30 +60,12 @@ h1 {
     text-align: center;
 }
 
-.navbar ul {
-    list-style: none;
-    background-color: rgb(58, 58, 58);
-    padding: 0x;
-    margin: 0x;
-    overflow: hidden;
-}
-
-.navbar a {
-    color: white;
-    font-family: 'Fira Code', Courier, monospace;
-    font-size: 18px;
-    text-decoration: none;
-    padding: 0x;
-    display: block;
-    text-align: center;
-}
-
-.navbar li {
-    float: left;
-}
-
+/* Paragraph text */
 p {
     color: white;
     font-family: 'Fira Code', Courier, monospace;
     font-size: 18px;
+
+    margin-left: 10%;
+    margin-right: 10%;
 }
