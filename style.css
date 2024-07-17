@@ -44,7 +44,7 @@ nav a {
     text-decoration: none;
 }
 
-nav a:hover, nav a:focus, nav a.highlighted {
+nav a:hover, nav a:focus, nav a.active {
     cursor: pointer;
     color: rgb(58, 58, 58);
     background-color: white;
@@ -155,7 +155,12 @@ button:hover {
     text-decoration: none;
 }
 
-.socials a, .socials a:visited, .socials a:active {
+.socials a {
+    text-decoration: none;
+    color: white;
+}
+
+.socials a:visited, .socials a:active {
     color: white;
 }
 

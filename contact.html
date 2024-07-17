@@ -22,11 +22,11 @@
     
     <header>
         <nav>
-            <a href="index.html">Home</a>
-            <a href="resume.html">Resume</a>
-            <a href="projects.html">Projects</a>
-            <a href="contact.html">Contact</a>
-            <a href="https://github.com/mharhay213/michael_website" target="_blank" rel="noopener noreferrer">Source Code</a> 
+            <a href="index.html" id="home">Home</a>
+            <a href="resume.html" id="resume">Resume</a>
+            <a href="projects.html" id="projects">Projects</a>
+            <a href="contact.html" id="contact">Contact</a>
+            <a href="https://github.com/mharhay213/michael_website" id="source" target="_blank" rel="noopener noreferrer">Source Code</a> 
         </nav>
     </header>
 
@@ -66,28 +66,7 @@
 
 
     <!-- JS Code Start -->
-    <script>
-        document.addEventListener('DOMContentLoaded', (event) => {
-            const navLinks = document.querySelectorAll('nav a');
-            
-            navLinks.forEach(link => {
-                link.addEventListener('click', (event) => {
-                    event.preventDefault();
-                    const href = link.getAttribute('href');
-
-                    // Remove 'highlighted' class from all links
-                    navLinks.forEach(navLink => navLink.classList.remove('highlighted'));
-
-                    // Add 'highlighted' class to clicked link
-                    link.classList.add('highlighted');
-
-                    // Navigate to the new page after a delay (simulate transition)
-                    setTimeout(() => {
-                        window.location.href = href;
-                    }, 300);
-                });
-            });
-        });
+    <script src="./button.js">
     </script>
 
 </body>
