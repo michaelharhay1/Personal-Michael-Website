@@ -155,6 +155,25 @@ button:hover {
     text-decoration: none;
 }
 
+.socials a {
+    color: white;
+    text-decoration: none;
+}
+
+.socials a:visited {
+    color: white;
+}
+
+.socials a:active {
+    color: white;
+}
+
 .socials i {
     padding: 0px 8px;
+}
+
+.socials i:hover {
+    transition-duration: 0.3s;
+    text-decoration: none;
+    color: grey;
 }
