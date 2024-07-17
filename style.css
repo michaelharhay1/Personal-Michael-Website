@@ -44,7 +44,7 @@ nav a {
     text-decoration: none;
 }
 
-nav a:hover {
+nav a:hover, nav a:focus, nav a.highlighted {
     cursor: pointer;
     color: rgb(58, 58, 58);
     background-color: white;
@@ -70,10 +70,10 @@ h1 {
 /* Heading 2 */
 h2 {
     color: white;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 48px;
+    font-family: 'Fira Code', Courier, monospace;
+    font-size: 36px;
     text-align: center;
-    padding: 30px;
+    padding: 50px;
 }
 
 /* Paragraph text */
@@ -155,16 +155,7 @@ button:hover {
     text-decoration: none;
 }
 
-.socials a {
-    color: white;
-    text-decoration: none;
-}
-
-.socials a:visited {
-    color: white;
-}
-
-.socials a:active {
+.socials a, .socials a:visited, .socials a:active {
     color: white;
 }
 

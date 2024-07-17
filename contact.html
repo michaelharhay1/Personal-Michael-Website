@@ -32,7 +32,7 @@
 
     <div>
 
-        <h2>Contact me!</h2>
+        <h2>Let's connect.</h2>
 
         <div class="contactpage">
 
@@ -54,7 +54,7 @@
                     <i class="fa-brands fa-github fa-2x"></i>
                 </a>
 
-                <a href="michaelharhay@hotmail.com" target="_blank">
+                <a href="mailto: michaelharhay@hotmail.com" target="_blank">
                     <i class="fa-solid fa-envelope fa-2x"></i>
                 </a>
                 
@@ -63,6 +63,32 @@
         </div>
 
     </div>
+
+
+    <!-- JS Code Start -->
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const navLinks = document.querySelectorAll('nav a');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    const href = link.getAttribute('href');
+
+                    // Remove 'highlighted' class from all links
+                    navLinks.forEach(navLink => navLink.classList.remove('highlighted'));
+
+                    // Add 'highlighted' class to clicked link
+                    link.classList.add('highlighted');
+
+                    // Navigate to the new page after a delay (simulate transition)
+                    setTimeout(() => {
+                        window.location.href = href;
+                    }, 300);
+                });
+            });
+        });
+    </script>
 
 </body>
 
