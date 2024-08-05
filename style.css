@@ -14,6 +14,14 @@
     box-sizing: border-box;
 }
 
+/* Background animation */
+canvas { 
+    overflow: hidden;
+    width:100vw;
+    height:100vh;
+    background-color:black;
+}
+ 
 /* Header */
 header {
     display: flex;
@@ -44,7 +52,7 @@ nav a {
     text-decoration: none;
 }
 
-nav a:hover, nav a:focus, nav a.active {
+nav a:hover, nav a:focus {
     cursor: pointer;
     color: rgb(58, 58, 58);
     background-color: white;
@@ -93,25 +101,6 @@ p {
 
     margin-left: 10%;
     margin-right: 10%;
-}
-
-/* Typewriter effect */
-.container {
-    display: inline-block;
-}
-
-.typewriter {
-    animation: 
-        typing 5s steps(330),
-        cursor .4s step-end infinite alternate;
-}
-
-@keyframes cursor {
-    50% {border-color: transparent}
-}
-
-@keyframes typing {
-    from {width: 0}
 }
 
 /* Input forms */
