@@ -2,7 +2,7 @@
     Author: Michael Harhay
 
     Date created: 17/02/2024
-    Date modified: 16/07/2024
+    Date modified: 05/08/2024
 
     Functionality: Style of website
 */
@@ -93,6 +93,25 @@ p {
 
     margin-left: 10%;
     margin-right: 10%;
+}
+
+/* Typewriter effect */
+.container {
+    display: inline-block;
+}
+
+.typewriter {
+    animation: 
+        typing 5s steps(330),
+        cursor .4s step-end infinite alternate;
+}
+
+@keyframes cursor {
+    50% {border-color: transparent}
+}
+
+@keyframes typing {
+    from {width: 0}
 }
 
 /* Input forms */
