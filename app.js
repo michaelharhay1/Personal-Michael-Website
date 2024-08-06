@@ -27,7 +27,7 @@ var w = window.innerWidth,
     h = window.innerHeight,
     canvas = document.getElementById('background'),
     ctx = canvas.getContext('2d'),
-    rate = 25,
+    rate = 20,
     numParts,
     time,
     count,
@@ -56,7 +56,7 @@ function create() {
             toX: Math.random() * 5 - 1,
             toY: Math.random() * 2 - 1,
             c: colors[Math.floor(Math.random() * colors.length)],
-            size: (Math.random() / 2 + 0.25) * size
+            size: (Math.random() / 3 + 0.25) * size
         }
     }
 }
@@ -69,21 +69,13 @@ function particles() {
     for (var i = 0; i < numParts; i++) {
         var li = parts[i];
         var distanceFactor = DistanceBetween(mouse, parts[i]); 
-        var distanceFactor = Math.max(Math.min(15 - (distanceFactor / 10), 5), 1);
+        var distanceFactor = Math.max(Math.min(15 - (distanceFactor / 5), 5), 1);
+        
         ctx.beginPath();
         ctx.arc(li.x, li.y, li.size * distanceFactor, 0, Math.PI * 2, false);
         ctx.fillStyle = li.c;
         ctx.strokeStyle = li.c;
         ctx.fill()
-
-        /*
-        if (i % 2 == 0) {
-            ctx.stroke();
-        }
-        else {
-            ctx.fill();
-        }
-        */
         
         li.x = li.x + li.toX * (time * 0.05);
         li.y = li.y + li.toY * (time * 0.05);
