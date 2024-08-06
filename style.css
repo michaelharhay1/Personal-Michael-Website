@@ -49,6 +49,16 @@ section {
     position: relative;
     z-index: 2;
 }
+
+/* Footer */
+footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    z-index: 3;
+    align-items: center;  
+    background-color: rgb(58, 58, 58);
+}
  
 /* Header */
 header {
@@ -134,6 +144,26 @@ p {
 
     margin-left: 10%;
     margin-right: 10%;
+}
+
+p.foottext {
+    background-color: transparent;
+    font-size: 12px;
+    padding: 10px;
+}
+
+a.plink {
+    color: white;
+    font-family: 'Fira Code', Courier, monospace;
+    font-size: 18px;
+    background-color: blue;
+    transition-duration: 0.4s;
+}
+
+a.plink:hover {
+    cursor: pointer;
+    color: rgb(58, 58, 58);
+    background-color: white;
 }
 
 /* Input forms */
