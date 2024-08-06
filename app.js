@@ -2,7 +2,7 @@
     Author: Michael Harhay
 
     Date created: 16/07/2024
-    Date modified: 05/08/2024
+    Date modified: 06/08/2024
 
     Functionality: Contains JS scripts for personal website
 */

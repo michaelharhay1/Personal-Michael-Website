@@ -2,7 +2,7 @@
     Author: Michael Harhay
 
     Date created: 17/02/2024
-    Date modified: 05/08/2024
+    Date modified: 06/08/2024
 
     Functionality: Style of website
 */
@@ -48,6 +48,21 @@ canvas#background {
 section {
     position: relative;
     z-index: 2;
+}
+
+/* Project / Resume boxes */
+.projectbox {
+    position: relative;
+    left: 0;
+    width: clamp(400px, 60%, 1200px);
+    background-color: rgb(58, 58, 58);
+    opacity: 90%;
+    margin-bottom: 20px;
+
+    border: 5px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: white;
 }
 
 /* Footer */
@@ -135,6 +150,14 @@ h2 {
     margin-top: 50px;
 }
 
+h3 {
+    color: white;
+    font-family: 'Fira Code', Courier, monospace;
+    font-size: 36px;
+    text-align: center;
+    padding: 20px;
+}
+
 /* Paragraph text */
 p {
     color: white;
@@ -164,6 +187,21 @@ a.plink:hover {
     cursor: pointer;
     color: rgb(58, 58, 58);
     background-color: white;
+}
+
+ul {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+li {
+    color: white;
+    font-family: 'Fira Code', Courier, monospace;
+    font-size: 18px;
+    justify-content: left;
+
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 /* Input forms */

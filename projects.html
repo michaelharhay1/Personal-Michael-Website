@@ -2,7 +2,7 @@
     Author: Michael Harhay
 
     Date created: 17/02/2024
-    Date modified: 05/08/2024
+    Date modified: 06/08/2024
 
     Functionality: Projects page of personal website
 -->
@@ -15,6 +15,7 @@
     <link rel="icon" type="image/png" href="/images/favicon_io/favicon-32x32.png">
     <title>Michael Harhay</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
 </head>
 
 <body>
@@ -30,8 +31,69 @@
     </header>
 
     <main>
-        <h1>My projects page, coming soon.</h1>
+
+        <canvas id="background"></canvas>
+
+        <section>
+            <h1>Projects</h1>
+        </section>
+
+        <section>
+
+            <div class="projectbox">
+                
+                <h3>ECE243 Final Project: 2048</h3>
+
+                <ul>
+                    <li>Developed from scratch in C</li>
+                    <li>NIOS-II Assembly knowledge used in the process</li>
+                    <li>Run on a DE1-SoC FPGA Board</li>
+                </ul>
+
+            </div>
+
+            <div class="projectbox">
+                
+                <h3>ECE297: EduRoute</h3>
+                
+                <ul>
+                    <li>Developed in C++ using GTK and a provided OSM API</li>
+                    <li>Teaches users their routes via an active recall approach, making commuting more enjoyable</li>
+                    <li>Worked on graphics, GUI design and functionality, pathfinding heuristics, and project organization</li>
+                </ul>
+
+            </div>
+
+            <div class="projectbox">
+
+                <h3>TD Bank: Various Projects</h3>
+                
+                <ul>
+                    <li>Developed multiple macros / query automations using VBA, Python, and SQL</li>
+                    <li>Currently building a data lookup engine using C#, which will pull data from MS Access and make it readable to users based on input criteria</li>
+                </ul>
+
+            </div>
+
+            <div class="projectbox">
+
+                <h3>Personal Project: Audio Plugin Development</h3>
+                
+                <ul>
+                    <li>Work in progress: developing a suite of simple audio effect plugins</li>
+                    <li>Building with the JUCE C++ framework</li>
+                    <li>CoolEQ (pictured) is a simple 3-band equalizer that can be used to boost/attenuate signal frequencies.</li>
+                    <li>Applying signal processing knowledge from ECE216</li>
+                </ul>
+
+            </div>
+
+        </section>
     </main>
+
+    <footer>
+        <p class="foottext">v1.0.1</p>
+    </footer>
 
     <!-- JS Code Start -->
     <script src="app.js"></script>
