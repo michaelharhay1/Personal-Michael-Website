@@ -27,26 +27,27 @@ var w = window.innerWidth,
     h = window.innerHeight,
     canvas = document.getElementById('background'),
     ctx = canvas.getContext('2d'),
-    rate = 30,
-    numParts = 50,
+    rate = 25,
+    numParts,
     time,
     count,
     size = 7,
     speed = 20,
     parts = new Array,
-    colors = ['#ffffff','#E0E0E0','#757575','#64B5F6','#6B99BE'];
-
-var mouse = {x: 0, y: 0};
+    colors = ['#ffffff','#E0E0E0','#757575'],
+    mouse = {x: 0, y: 0};
 
 canvas.setAttribute('width', w);
 canvas.setAttribute('height', h);
 create();
 particles();
+window.addEventListener('resize', resizeWindow, false);
 
 // Initialize particle array //
 function create() {
     time = 0;
     count = 0;
+    numParts = w / 20;
 
     for (var i = 0; i < numParts; i++) {
         parts[i] = {
@@ -67,9 +68,8 @@ function particles() {
     
     for (var i = 0; i < numParts; i++) {
         var li = parts[i];
-        var distanceFactor = DistanceBetween(mouse, parts[i]);
-        var distanceFactor = Math.max(Math.min(15 - (distanceFactor / 10), 10), 1);
-        
+        var distanceFactor = DistanceBetween(mouse, parts[i]); 
+        var distanceFactor = Math.max(Math.min(15 - (distanceFactor / 10), 5), 1);
         ctx.beginPath();
         ctx.arc(li.x, li.y, li.size * distanceFactor, 0, Math.PI * 2, false);
         ctx.fillStyle = li.c;
@@ -120,4 +120,13 @@ function DistanceBetween(p1, p2) {
    var dx = p2.x - p1.x;
    var dy = p2.y - p1.y;
    return Math.sqrt(dx * dx + dy * dy);
+}
+
+// Handle window resize //
+function resizeWindow() {
+    w = window.innerWidth;
+    h = window.innerHeight;
+    canvas.setAttribute('width', w);
+    canvas.setAttribute('height', h);
+    create();
 }
