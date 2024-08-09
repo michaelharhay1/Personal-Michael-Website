@@ -49,7 +49,21 @@ canvas#background {
     pointer-events: auto;
 }
 
-/* Project / Resume boxes */
+/* Content Boxes */
+.aboutbox {
+    position: relative;
+    left: 0;
+    width: clamp(450px, 80%, 1000px);
+    background-color: rgb(58, 58, 58);
+    opacity: 90%;
+    margin-bottom: 20px;
+
+    border: 5px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: white;
+}
+
 .projectbox {
     position: relative;
     left: 0;
@@ -126,6 +140,20 @@ section {
     z-index: 2;
 }
 
+.content {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.horizontal-line {
+    width: 100%;
+    background-color: white;
+    border-style: dashed;
+}
+
 /*
 .fadein {
     opacity: 0;
@@ -164,15 +192,35 @@ h3 {
     padding: 20px;
 }
 
+/* Images */
+img {
+    height: auto;
+    width: clamp(200px, 30vw, 350px);
+    margin: auto;
+
+    border: 3px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: white;
+}
+
 /* Paragraph text */
 p {
     color: white;
     font-family: 'Fira Code', Courier, monospace;
-    font-size: 18px;
-    background-color: blue;
+    font-size: 20px;
 
     margin-left: 10%;
     margin-right: 10%;
+}
+
+p.left {
+    flex: 1;
+    text-align: left;
+    max-width: 50%;
+    margin: 0;
+    padding: 3%;
+    box-sizing: border-box;
 }
 
 p.foottext {
