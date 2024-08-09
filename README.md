@@ -1,3 +1,3 @@
-# michael_website
+# My website
 
-This is my first time building a website!
+This is my personal website, built using pure HTML, CSS, and JavaScript.
