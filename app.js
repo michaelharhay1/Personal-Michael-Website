@@ -2,7 +2,7 @@
     Author: Michael Harhay
 
     Date created: 16/07/2024
-    Date modified: 06/08/2024
+    Date modified: 09/08/2024
 
     Functionality: Contains JS scripts for personal website
 */
@@ -20,6 +20,32 @@ Typewriter
     .typeString('A driven, goal-oriented computer engineering student with a love for all things software, and a growing interest in artificial intelligence and data. A diligent, creative problem-solver with a dedication to excellence and a love for learning and self-improvement. A confident, accountable leader who brings out the best in others.')
     .pauseFor(2000)
     .start()
+
+
+/*
+// --- Scroll Fade In Effect --- //
+window.addEventListener('scroll', function() {
+    console.log("SCROLLING!");
+    fadeIn();
+});
+
+function fadeIn() {
+    var pageTop = $(document).scrollTop();
+    var pageBottom = pageTop + $(window).height();
+    var tags = $(".fadein");
+
+    for (var i = 0; i < tags.length; i++) {
+        var tag = tags[i];
+
+        if ($(tag).position().top < pageBottom) {
+            $(tag).addClass("visible");
+        } 
+        else {
+            $(tag).removeClass("visible");
+        }
+    }
+}
+*/
 
 
 // --- Particles Background Effect --- //

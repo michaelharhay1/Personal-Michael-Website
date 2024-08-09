@@ -2,7 +2,7 @@
     Author: Michael Harhay
 
     Date created: 17/02/2024
-    Date modified: 06/08/2024
+    Date modified: 09/08/2024
 
     Functionality: Style of website
 */
@@ -23,11 +23,14 @@ html, body {
     overflow: hidden;
 }
 
+/* General body text */
 body {
     display: flex;
     flex-direction: column;
     font-family: Arial, sans-serif;
     overflow: auto;
+    background-color: black;
+    text-align: center;
 }
 
 body::-webkit-scrollbar {
@@ -43,11 +46,7 @@ canvas#background {
     z-index: 1;
     width: 100%;
     height: 100%;
-}
-
-section {
-    position: relative;
-    z-index: 2;
+    pointer-events: auto;
 }
 
 /* Project / Resume boxes */
@@ -118,18 +117,25 @@ nav a:hover, nav a:focus {
     padding: 3px 8px;
 }
 
-/* General body text */
-body {
-    background-color: black;
-    text-align: center;
-}
-
 section {
     display: grid;
     place-items: center;
     align-content: center;
     min-height: 100vh;
+    position: relative;
+    z-index: 2;
 }
+
+/*
+.fadein {
+    opacity: 0;
+    transition: all 1s;
+}
+
+.fadein.visible {
+    opacity: 1;
+}
+*/
 
 /* Heading 1 */
 h1 {
