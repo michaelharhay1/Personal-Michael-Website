@@ -30,16 +30,22 @@ renderer.domElement.style.width = '100%';
 renderer.domElement.style.height = '100%';
 renderer.domElement.style.zIndex = '-1';
 
-// --- Create scene objects --- //
+// --- Create stars --- //
 const stars = [];
-Array(75).fill().forEach(() => {
-    const star = addStar();
-    stars.push(star);
-});
+const numStars = 75;
+const boundary = 50;
+const rate = 0.0001;
+const zrate = 25;
+const colors = ['#ffffff', '#E0E0E0'];
+
+for (let i = 0; i < numStars; i++) {
+    stars.push(addStar());
+}
 
 function addStar() {
     const geometry = new THREE.SphereGeometry(0.25, 24, 24);
-    const material = new THREE.MeshBasicMaterial({color: 0xffffff});
+    const randColor = colors[Math.floor(Math.random() * colors.length)];
+    const material = new THREE.MeshBasicMaterial({color: randColor});
     const star = new THREE.Mesh(geometry, material);
 
     const [x, y, z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread(100));
@@ -53,14 +59,11 @@ function addStar() {
 }
 
 // --- Animation function --- //
-const boundary = 50;
-const rate = 0.0001;
-const zrate = 25;
-
 function animate() {
     requestAnimationFrame(animate); 
 
     stars.forEach(star => {
+        // Update star positions
         star.position.x += star.userData.dx * rate;
         star.position.y += star.userData.dy * rate;
         star.position.z -= zrate * rate;
