@@ -90,7 +90,7 @@ function scroll() {
     // t = Math.exp(-window.scrollY * 0.001);
     // t = 760 * (Math.log10(window.scrollY + 9.7)) - 749.9465;
     t = (Math.pow(window.scrollY, 2)) / 1700;
-    console.log(t);
+    // console.log(t);
 
     camera.position.z = cameraZInit + (t * 0.065);
 }
