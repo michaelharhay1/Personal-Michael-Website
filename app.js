@@ -21,6 +21,20 @@ Typewriter
     .pauseFor(2000)
     .start()
 
+// --- Footer Appear on Scroll --- //
+document.addEventListener('scroll', () => {
+    const footer = document.querySelector('footer');
+    const scrollPosition = window.innerHeight + window.scrollY;
+    const documentHeight = document.documentElement.scrollHeight;
+
+    // If at bottom of page, show footer
+    if (scrollPosition >= documentHeight) {
+        footer.style.opacity = '1';
+    } 
+    else {
+        footer.style.opacity = '0';
+    }
+});    
 
 /*
 // --- Scroll Fade In Effect --- //

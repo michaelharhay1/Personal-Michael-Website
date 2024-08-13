@@ -15,20 +15,21 @@
 }
 
 /* Remove scroll bar */
-html, body {
+html {
     margin: 0;
     padding: 0;
     height: 100%;
     width: 100%;
-    overflow: hidden;
 }
 
 /* General body text */
 body {
-    display: flex;
-    flex-direction: column;
-    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
     overflow: auto;
+
+    font-family: 'Fira Code', Courier, monospace;
     background-color: black;
     text-align: center;
 }
@@ -81,12 +82,15 @@ body::-webkit-scrollbar {
 /* Footer */
 footer {
     position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
+    bottom: 10px;
+    left: 46%;
+    width: 8%;
+    border-radius: 10px;
     z-index: 3;
     align-items: center;  
-    background-color: rgb(58, 58, 58);
+    opacity: 0;
+    transition: 0.3s;
+    background-color: rgb(58, 58, 58, 0.75);
 }
  
 /* Header */
@@ -101,7 +105,7 @@ header {
     padding: 12px; 
     padding-left: 10%;
     padding-right: 10%;
-    background-color: rgb(58, 58, 58);
+    background-color: rgb(58, 58, 58, 0.75);
 }
 
 /* Navbar */
@@ -116,6 +120,7 @@ nav {
 nav a {
     text-align: center;
     cursor: pointer;
+    opacity: 100%;
     transition-duration: 0.3s;
 
     color: white;

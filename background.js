@@ -11,6 +11,15 @@ import * as THREE from 'three';
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+const stars = [];
+const numStars = 100;
+const rate = 0.0001;
+const zrate = 20;
+const colors = ['#ffffff', '#E0E0E0'];
+const boundarySize = 200;
+const boundary = boundarySize / 2;
+const cameraZInit = 30;
+var t = 0;
 
 // --- Set up renderer --- //
 const renderer = new THREE.WebGLRenderer({
@@ -20,7 +29,7 @@ renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.setAnimationLoop(animate);
 document.body.appendChild(renderer.domElement);
-camera.position.z = 50;
+camera.position.z = cameraZInit;
 
 // --- Set Style --- //
 renderer.domElement.style.position = 'fixed';
@@ -31,24 +40,17 @@ renderer.domElement.style.height = '100%';
 renderer.domElement.style.zIndex = '-1';
 
 // --- Create stars --- //
-const stars = [];
-const numStars = 75;
-const boundary = 50;
-const rate = 0.0001;
-const zrate = 25;
-const colors = ['#ffffff', '#E0E0E0'];
-
 for (let i = 0; i < numStars; i++) {
     stars.push(addStar());
 }
 
 function addStar() {
-    const geometry = new THREE.SphereGeometry(0.25, 24, 24);
+    const geometry = new THREE.SphereGeometry(0.3, 24, 24);
     const randColor = colors[Math.floor(Math.random() * colors.length)];
     const material = new THREE.MeshBasicMaterial({color: randColor});
     const star = new THREE.Mesh(geometry, material);
 
-    const [x, y, z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread(100));
+    const [x, y, z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread(boundarySize));
     const [dx, dy, dz] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread(10));
 
     star.position.set(x, y, z);
@@ -78,6 +80,19 @@ function animate() {
     });
 
     renderer.render(scene, camera);
+}
+
+// --- Scroll animation --- //
+document.body.onscroll = scroll;
+
+function scroll() {
+    // Calculate scaling factor t to skew how fast it increases
+    // t = Math.exp(-window.scrollY * 0.001);
+    // t = 760 * (Math.log10(window.scrollY + 9.7)) - 749.9465;
+    t = (Math.pow(window.scrollY, 2)) / 1700;
+    console.log(t);
+
+    camera.position.z = cameraZInit + (t * 0.065);
 }
 
 // --- Handle window resizing --- //
