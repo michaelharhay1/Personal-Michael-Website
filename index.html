@@ -2,7 +2,7 @@
     Author: Michael Harhay
 
     Date created: 17/02/2024
-    Date modified: 09/08/2024
+    Date modified: 13/08/2024
 
     Functionality: Home page of personal website
 -->
@@ -16,6 +16,15 @@
     <title>Michael Harhay</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+    
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.module.js",
+                "jsm/": "https://cdn.jsdelivr.net/npm/three@0.161.0/examples/jsm/"
+            }
+        }
+    </script>
 </head>
 
 <body>
@@ -65,6 +74,7 @@
     </footer>
     
     <!-- JS Code Start -->
+    <script type="module" src="background.js"></script>
     <script src="app.js"></script>
 
 </body>
