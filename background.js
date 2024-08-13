@@ -12,35 +12,73 @@ import * as THREE from 'three';
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 
-const renderer = new THREE.WebGLRenderer({ alpha: true }); // Enable transparency
+// --- Set up renderer --- //
+const renderer = new THREE.WebGLRenderer({
+    canvas: document.querySelector('#background'),
+});
+renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.setAnimationLoop(animate);
 document.body.appendChild(renderer.domElement);
+camera.position.z = 50;
 
-// Set the canvas to the background
+// --- Set Style --- //
 renderer.domElement.style.position = 'fixed';
 renderer.domElement.style.top = '0';
 renderer.domElement.style.left = '0';
 renderer.domElement.style.width = '100%';
 renderer.domElement.style.height = '100%';
-renderer.domElement.style.zIndex = '-1'; // Ensure it's behind the content
+renderer.domElement.style.zIndex = '-1';
 
-const geometry = new THREE.BoxGeometry(1, 1, 1);
-const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-const cube = new THREE.Mesh(geometry, material);
-scene.add(cube);
+// --- Create scene objects --- //
+const stars = [];
+Array(75).fill().forEach(() => {
+    const star = addStar();
+    stars.push(star);
+});
 
-camera.position.z = 5;
+function addStar() {
+    const geometry = new THREE.SphereGeometry(0.25, 24, 24);
+    const material = new THREE.MeshBasicMaterial({color: 0xffffff});
+    const star = new THREE.Mesh(geometry, material);
+
+    const [x, y, z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread(100));
+    const [dx, dy, dz] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread(10));
+
+    star.position.set(x, y, z);
+    star.userData = {dx, dy, dz};
+
+    scene.add(star);
+    return star;
+}
+
+// --- Animation function --- //
+const boundary = 50;
+const rate = 0.0001;
+const zrate = 25;
 
 function animate() {
-    cube.rotation.x += 0.01;
-    cube.rotation.y += 0.01;
+    requestAnimationFrame(animate); 
+
+    stars.forEach(star => {
+        star.position.x += star.userData.dx * rate;
+        star.position.y += star.userData.dy * rate;
+        star.position.z -= zrate * rate;
+        
+        // Prevent stars from escaping boundary
+        if (star.position.x > boundary) star.position.x = -boundary;
+        if (star.position.x < -boundary) star.position.x = boundary;
+        if (star.position.y > boundary) star.position.y = -boundary;
+        if (star.position.y < -boundary) star.position.y = boundary;
+        if (star.position.z > boundary) star.position.z = -boundary;
+        if (star.position.z < -boundary) star.position.z = boundary;
+    });
 
     renderer.render(scene, camera);
 }
 
+// --- Handle window resizing --- //
 window.addEventListener('resize', () => {
-    // Update the camera aspect ratio and renderer size on window resize
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
     renderer.setSize(window.innerWidth, window.innerHeight);

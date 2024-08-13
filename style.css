@@ -2,7 +2,7 @@
     Author: Michael Harhay
 
     Date created: 17/02/2024
-    Date modified: 09/08/2024
+    Date modified: 13/08/2024
 
     Functionality: Style of website
 */
@@ -39,7 +39,7 @@ body::-webkit-scrollbar {
 }
 
 /* Background animation */
-canvas#background {
+/* canvas#background {
     position: fixed;
     top: 0;
     left: 0;
@@ -47,7 +47,7 @@ canvas#background {
     width: 100%;
     height: 100%;
     pointer-events: auto;
-}
+} */
 
 /* Content Boxes */
 .aboutbox {
@@ -80,8 +80,9 @@ canvas#background {
 
 /* Footer */
 footer {
-    position: relative;
+    position: fixed;
     bottom: 0;
+    left: 0;
     width: 100%;
     z-index: 3;
     align-items: center;  
