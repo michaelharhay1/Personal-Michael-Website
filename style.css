@@ -71,7 +71,7 @@ body::-webkit-scrollbar {
     width: clamp(400px, 60%, 1200px);
     background-color: rgb(58, 58, 58);
     opacity: 90%;
-    margin-bottom: 20px;
+    margin-bottom: 60px;
 
     border: 5px;
     border-radius: 10px;

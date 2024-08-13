@@ -2,7 +2,7 @@
     Author: Michael Harhay
 
     Date created: 17/02/2024
-    Date modified: 06/08/2024
+    Date modified: 13/08/2024
 
     Functionality: Projects page of personal website
 -->
@@ -16,6 +16,15 @@
     <title>Michael Harhay</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+    
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.module.js",
+                "jsm/": "https://cdn.jsdelivr.net/npm/three@0.161.0/examples/jsm/"
+            }
+        }
+    </script>
 </head>
 
 <body>
@@ -35,12 +44,12 @@
         <canvas id="background"></canvas>
 
         <section>
-            <h1>Projects</h1>
+            <h1 class="fade" style="opacity: 1;">Projects</h1>
         </section>
 
         <section>
 
-            <div class="projectbox">
+            <div class="fade projectbox">
                 
                 <h3>ECE243 Final Project: 2048</h3>
 
@@ -52,7 +61,7 @@
 
             </div>
 
-            <div class="projectbox">
+            <div class="fade projectbox">
                 
                 <h3>ECE297: EduRoute</h3>
                 
@@ -64,7 +73,7 @@
 
             </div>
 
-            <div class="projectbox">
+            <div class="fade projectbox">
 
                 <h3>TD Bank: Various Projects</h3>
                 
@@ -75,7 +84,7 @@
 
             </div>
 
-            <div class="projectbox">
+            <div class="fade projectbox">
 
                 <h3>Personal Project: Audio Plugin Development</h3>
                 
@@ -95,7 +104,8 @@
         <p class="foottext">v1.0.1</p>
     </footer>
 
-    <!-- JS Code Start -->
+    <!-- JS Code -->
+    <script type="module" src="background.js"></script>
     <script src="app.js"></script>
 
 </body>

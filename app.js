@@ -46,12 +46,12 @@ document.addEventListener('scroll', () => {
         var tagTop = tag.getBoundingClientRect().top + pageTop;
         var tagBottom = tag.getBoundingClientRect().bottom + pageTop;
 
-        if (tagTop > pageTop && tagBottom < pageBottom) {
-            tag.style.transition = 'opacity 0.6s';
+        if (tagTop > pageTop && tagTop < pageBottom && tagBottom > pageTop && tagBottom < pageBottom) { 
+            tag.style.transition = 'opacity 0.5s';
             tag.style.opacity = '1';
         } 
         else {
-            tag.style.transition = 'opacity 0.6s';
+            tag.style.transition = 'opacity 0.5s';
             tag.style.opacity = '0';
         }
     });
