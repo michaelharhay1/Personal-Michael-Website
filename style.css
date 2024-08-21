@@ -205,7 +205,7 @@ img {
 }
 
 img.project {
-    width: clamp(150px, 35cqw, 450px);
+    width: clamp(150px, 35cqw, 400px);
 }
 
 img.profile {

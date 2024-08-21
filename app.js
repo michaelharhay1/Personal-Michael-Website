@@ -2,7 +2,7 @@
     Author: Michael Harhay
 
     Date created: 16/07/2024
-    Date modified: 20/08/2024
+    Date modified: 21/08/2024
 
     Functionality: Contains JS scripts for personal website
 */
@@ -29,8 +29,8 @@ document.addEventListener('scroll', () => {
     var tags = document.querySelectorAll('.fade');
 
     tags.forEach(tag => {
-        var tagTop = tag.getBoundingClientRect().top + pageTop;
-        var tagBottom = tag.getBoundingClientRect().bottom + pageTop;
+        var tagTop = tag.getBoundingClientRect().top + pageTop + 70;
+        var tagBottom = tag.getBoundingClientRect().bottom + pageTop - 70;
 
         if (tagTop > pageTop && tagTop < pageBottom && tagBottom > pageTop && tagBottom < pageBottom) { 
             tag.style.transition = 'opacity 0.5s';
