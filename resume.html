@@ -2,7 +2,7 @@
     Author: Michael Harhay
 
     Date created: 17/02/2024
-    Date modified: 05/08/2024
+    Date modified: 20/08/2024
 
     Functionality: Resume page of personal website
 -->
@@ -12,9 +12,19 @@
 <html>
 
 <head>   
-    <link rel="icon" type="image/png" href="/images/favicon_io/favicon-32x32.png">
     <title>Michael Harhay</title>
+    <link rel="icon" type="image/png" href="/images/favicon_io/favicon-32x32.png">
     <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+    
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.module.js",
+                "jsm/": "https://cdn.jsdelivr.net/npm/three@0.161.0/examples/jsm/"
+            }
+        }
+    </script>
 </head>
 
 <body>
@@ -30,11 +40,36 @@
     </header>
 
     <main>
-        <h1>My resume page, coming soon.</h1>
+
+        <canvas id="background"></canvas>
+
+        <section>
+            <h1 class="fade" style="opacity: 1;">Resume</h1>
+        </section>
+
+        <section>
+
+            <div class="fade projectbox">
+                <h3>ECE243 Final Project: 2048</h3>
+
+                <ul>
+                    <li>Developed from scratch in C</li>
+                    <li>NIOS-II Assembly knowledge used in the process</li>
+                    <li>Run on a DE1-SoC FPGA Board</li>
+                </ul>
+            </div>
+
+        </section>
     </main>
 
-    <!-- JS Code Start -->
+    <footer>
+        <p class="foottext">v1.0.1</p>
+    </footer>
+
+    <!-- JS Code -->
+    <script type="module" src="background.js"></script>
     <script src="app.js"></script>
+
 
 </body>
 

@@ -2,7 +2,7 @@
     Author: Michael Harhay
 
     Date created: 13/08/2024
-    Date modified: 13/08/2024
+    Date modified: 20/08/2024
 
     Functionality: Contains ThreeJS code for personal website background
 */
@@ -13,8 +13,8 @@ const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 const stars = [];
 const numStars = 100;
-const rate = 0.0001;
-const zrate = 20;
+const rate = 0.05;
+const zrate = 15;
 const colors = ['#ffffff', '#E0E0E0'];
 const boundarySize = 200;
 const boundary = boundarySize / 2;
@@ -61,26 +61,41 @@ function addStar() {
 }
 
 // --- Animation function --- //
-function animate() {
-    requestAnimationFrame(animate); 
+let isAnimating = true;
+let lastFrameTime = 0;
+const frameRate = 30; // Target frame rate, for example, 30 FPS
 
-    stars.forEach(star => {
-        // Update star positions
-        star.position.x += star.userData.dx * rate;
-        star.position.y += star.userData.dy * rate;
-        star.position.z -= zrate * rate;
-        
-        // Prevent stars from escaping boundary
-        if (star.position.x > boundary) star.position.x = -boundary;
-        if (star.position.x < -boundary) star.position.x = boundary;
-        if (star.position.y > boundary) star.position.y = -boundary;
-        if (star.position.y < -boundary) star.position.y = boundary;
-        if (star.position.z > boundary) star.position.z = -boundary;
-        if (star.position.z < -boundary) star.position.z = boundary;
-    });
+function animate(time) {
+    if (!isAnimating) return;
 
-    renderer.render(scene, camera);
+    const deltaTime = time - lastFrameTime;
+
+    if (deltaTime > 1000 / frameRate) {
+        lastFrameTime = time;
+
+        stars.forEach(star => {
+            star.position.x += star.userData.dx * rate;
+            star.position.y += star.userData.dy * rate;
+            star.position.z -= zrate * rate;
+
+            // Prevent stars from escaping boundary
+            if (star.position.x > boundary) star.position.x = -boundary;
+            if (star.position.x < -boundary) star.position.x = boundary;
+            if (star.position.y > boundary) star.position.y = -boundary;
+            if (star.position.y < -boundary) star.position.y = boundary;
+            if (star.position.z > boundary) star.position.z = -boundary;
+            if (star.position.z < -boundary) star.position.z = boundary;
+        });
+
+        renderer.render(scene, camera);
+    }
+
+    requestAnimationFrame(animate);
 }
+
+// Start the animation
+requestAnimationFrame(animate);
+
 
 // --- Scroll animation --- //
 document.body.onscroll = scroll;
@@ -90,7 +105,6 @@ function scroll() {
     // t = Math.exp(-window.scrollY * 0.001);
     // t = 760 * (Math.log10(window.scrollY + 9.7)) - 749.9465;
     t = (Math.pow(window.scrollY, 2)) / 1700;
-    // console.log(t);
 
     camera.position.z = cameraZInit + (t * 0.065);
 }
