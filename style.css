@@ -2,7 +2,7 @@
     Author: Michael Harhay
 
     Date created: 17/02/2024
-    Date modified: 21/08/2024
+    Date modified: 27/08/2024
 
     Functionality: Style of website
 */
@@ -32,6 +32,13 @@ body {
     font-family: 'Fira Code', Courier, monospace;
     background-color: black;
     text-align: center;
+
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+body.fade-in {
+    opacity: 1;
 }
 
 body::-webkit-scrollbar {
@@ -206,10 +213,13 @@ img {
 
 img.project {
     width: clamp(150px, 35cqw, 400px);
+    height: auto;
+    max-height: 450px;
 }
 
 img.profile {
     width: clamp(100px, 35cqw, 400px);
+
 }
 
 /* Paragraph text */
