@@ -2,7 +2,7 @@
     Author: Michael Harhay
 
     Date created: 17/02/2024
-    Date modified: 27/08/2024
+    Date modified: 29/09/2024
 
     Functionality: Style of website
 */
@@ -98,8 +98,8 @@ header {
     justify-content: space-between;
     align-items: center;  
     padding: 1.5vh; 
-    padding-left: 5%;
-    padding-right: 5%;
+    padding-left: 8%;
+    padding-right: 8%;
     background-color: rgb(58, 58, 58, 0.75);
 }
 

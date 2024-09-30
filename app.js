@@ -2,7 +2,7 @@
     Author: Michael Harhay
 
     Date created: 16/07/2024
-    Date modified: 27/08/2024
+    Date modified: 29/09/2024
 
     Functionality: Contains JS scripts for personal website
 */
@@ -52,7 +52,7 @@ window.addEventListener('beforeunload', () => {
     document.body.classList.remove('fade-in');
 });
 
-document.querySelectorAll('nav a').forEach(link => {
+document.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', function (e) {
         
         // Allow usual behaviour if opening in new tab
