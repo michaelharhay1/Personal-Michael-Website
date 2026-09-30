@@ -1,80 +1,55 @@
-<!--
-    Author: Michael Harhay
-
-    Date created: 17/02/2024
-    Date modified: 29/09/2024
-
-    Functionality: Home page of personal website
--->
-
 <!DOCTYPE html>
-
-<html>
-
-<head>   
-    <title>Michael Harhay</title>
-    <link rel="icon" type="image/png" href="./media/favicon_io/favicon-32x32.png">
-    <link rel="stylesheet" href="style.css">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
-    
-    <script type="importmap">
-        {
-            "imports": {
-                "three": "https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.module.js",
-                "jsm/": "https://cdn.jsdelivr.net/npm/three@0.161.0/examples/jsm/"
-            }
-        }
-    </script>
+    <title>Michael Harhay</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    
-    <!-- <audio src="music.wav" autoplay loop></audio> -->
-
     <header>
+        <h1>Michael Harhay</h1>
         <nav>
-            <a href="index.html">Home</a>
-            <a href="projects.html">Projects</a>
-            <a href="./media/Michael Harhay Resume - Updated Winter 2025.pdf" target="_blank">Resume</a>
-            <a href="contact.html">Contact</a>
+            <a href="">home</a>
+            <a href="about/index.html">about</a>
+            <a href="projects/index.html">projects</a>
+            <a href="music/index.html">music</a>
+            <a href="contact/index.html">contact</a>
         </nav>
     </header>
 
     <main>
 
-        <canvas id="background"></canvas>
-
         <section>
-            <h1 class="fade" style="opacity: 1;">Michael Harhay</h1>
+            <h2>Hello</h2>
+            <p>
+                I'm Michael, a computer engineering
+                student at the University of Toronto.
+            </p>
+            <p>
+                I like computers, music, cooking, and reading (among other things).
+            </p>
         </section>
 
         <section>
-            <div class="fade aboutbox">
-                <h3>About Me</h3>
-                <div class="horizontal-line"></div>
-
-                <div class="content">
-                    <p class="left">Hey, I'm Michael! I'm a driven, goal-oriented computer engineering student with a love for all things software, and an interest in backend systems and deep learning. I enjoy solving problems, being creative, and learning new things!</p>
-                    <img class="profile" src="./media/headshot.jpg" alt="Headshot">
-                </div>
-            </div>
+            <h2>Currently</h2>
+            <ul>
+                <li>working at Arxtron Technologies</li>
+                <li>building my capstone project</li>
+                <li>working on various personal projects</li>
+            </ul>
         </section>
-
-        <section>
-            <p class="fade">To learn more, check out my <a class="plink" href="projects.html">projects</a> or <a class="plink" href="./media/Michael Harhay Resume - Updated Winter 2025.pdf" target="_blank">resume</a>.</p>
-        </section>
-
     </main>
 
     <footer>
-        <p class="foottext">v1.1.2 | <a class="plink" style="font-size: clamp(12px, 1cqw, 18px);" href="https://github.com/michaelharhay1/Personal-Michael-Website" target="_blank">source</a> </p>
+        <p>
+            © <span id="copyrightYear"></span> Michael Harhay<br><br>
+            v<span id="siteVersion"></span> | <a href="https://github.com/michaelharhay1/Personal-Michael-Website" target="_blank">source</a>
+        </p>
     </footer>
-    
-    <!-- JS Code -->
-    <script type="module" src="background.js"></script>
-    <script src="app.js"></script>
 
+    <script src="config.js"></script>
+    <script src="script.js"></script>
 </body>
-
 </html>
