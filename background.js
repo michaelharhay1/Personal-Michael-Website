@@ -1,12 +1,3 @@
-/*
-    Author: Michael Harhay
-
-    Date created: 13/08/2024
-    Date modified: 20/08/2024
-
-    Functionality: Contains ThreeJS code for personal website background
-*/
-
 import * as THREE from 'three';
 
 const scene = new THREE.Scene();

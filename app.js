@@ -1,12 +1,3 @@
-/*
-    Author: Michael Harhay
-
-    Date created: 16/07/2024
-    Date modified: 29/09/2024
-
-    Functionality: Contains JS scripts for personal website
-*/
-
 // --- Footer Appear on Scroll --- //
 document.addEventListener('scroll', () => {
     const footer = document.querySelector('footer');
